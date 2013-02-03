@@ -1,0 +1,6 @@
+    <meta name="description" content="aaaa">
+    <meta name="keywords" content="Use no more than ">
+    <meta name="copyright" content="Copyright YourCompany - 2008">
+    <meta name="author" content="Your Name/Company">
+    <meta name="email" content="suppport@yoursite.com">
+    <meta name="Charset" content="UTF-8">

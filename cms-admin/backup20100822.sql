@@ -1,0 +1,1 @@
+DELETE FROM cdsINSERT INTO cds VALUES('Beauty', 'Ryuichi Sakamoto', '1990', '1');INSERT INTO cds VALUES('Goodbye Country (Hello Nightclub)', 'Groove Armada', '2001', '4');INSERT INTO cds VALUES('Glee', 'Bran Van 3000', '1997', '5');

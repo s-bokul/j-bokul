@@ -1,0 +1,2 @@
+[28-Oct-2010 15:20:11] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/sssbangl/public_html/cms-admin/db/dba.dll on line 9
+[28-Oct-2010 15:23:27] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/sssbangl/public_html/cms-admin/db/dba.dll on line 9

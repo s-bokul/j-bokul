@@ -1,0 +1,20 @@
+[02-Sep-2009 17:56:11] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/easyrefi/public_html/log/log_test.php on line 22
+[02-Sep-2009 18:00:56] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/easyrefi/public_html/log/log_test.php on line 22
+[02-Sep-2009 18:02:44] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/easyrefi/public_html/log/log_test.php on line 22
+[02-Sep-2009 18:04:50] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/easyrefi/public_html/log/log_test.php on line 22
+[02-Sep-2009 18:29:38] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/easyrefi/public_html/log/log_test.php on line 22
+[02-Sep-2009 18:30:14] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/easyrefi/public_html/log/log_test.php on line 22
+[08-Sep-2009 20:07:17] PHP Warning:  Unknown: write failed: No space left on device (28) in Unknown on line 0
+[08-Sep-2009 20:07:17] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-Sep-2009 20:08:38] PHP Warning:  Unknown: write failed: No space left on device (28) in Unknown on line 0
+[08-Sep-2009 20:08:38] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-Sep-2009 20:08:59] PHP Warning:  Unknown: write failed: No space left on device (28) in Unknown on line 0
+[08-Sep-2009 20:08:59] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-Sep-2009 20:09:35] PHP Warning:  Unknown: write failed: No space left on device (28) in Unknown on line 0
+[08-Sep-2009 20:09:35] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-Sep-2009 20:10:33] PHP Warning:  Unknown: write failed: No space left on device (28) in Unknown on line 0
+[08-Sep-2009 20:10:33] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-Sep-2009 20:16:29] PHP Warning:  Unknown: write failed: No space left on device (28) in Unknown on line 0
+[08-Sep-2009 20:16:29] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-Sep-2009 20:17:10] PHP Warning:  Unknown: write failed: No space left on device (28) in Unknown on line 0
+[08-Sep-2009 20:17:10] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0

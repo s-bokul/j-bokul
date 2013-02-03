@@ -1,0 +1,148 @@
+
+#login-box {
+	width:333px;
+	height: 352px;
+	color: #ebebeb;
+	font: 12px Arial, Helvetica, sans-serif;
+	background-image: url(../images/login-box-backg.png);
+	background-repeat: no-repeat;
+	padding-top: 78px;
+	padding-right: 60px;
+	padding-bottom: 0;
+	padding-left: 78px;
+}
+
+#login-box img {
+	border:none;
+}
+
+#login-box h2 {
+	padding:0;
+	margin:0;
+	color: #ebebeb;
+	font-family: "Calibri", Arial;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#login-box-field {
+	float: left;
+	display:inline;
+	width:230px;
+	margin:0 0 7px 0;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0px;
+	margin-left: 0;
+}
+
+
+.form-login  {
+	width: 205px;
+	padding: 10px 4px 6px 3px;
+	border: 1px solid #214689;
+	background-color:#325EA1;
+	font-size: 16px;
+	color: #FFFFFF;
+}
+
+.texthead {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#head-sec
+{
+	height:80px;
+	width:100%;
+	background:url(../images/banner_bg.jpg) repeat-x;
+	vertical-align: middle;
+	line-height: 80px;
+	font-size: 36px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-family: "Trebuchet MS", Verdana;
+	font-weight: bold;
+}
+#foot-sec {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 50px;
+	color: #FFFFFF;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	height: 50px;
+	width: 100%;
+	background-color: #294E8B;
+	background-image: url(../images/banner_bg.jpg);
+	background-repeat: repeat-x;
+}
+.fail_log
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #820000;
+	text-decoration: none;
+}
+#menus {
+	height: 40px;
+	width: 978px;
+	line-height: 30px;
+	text-align: left;
+	vertical-align: top;
+	background-color: #CCCCCC;
+	display: block;
+}
+#menus ul {
+	list-style-type: none;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+#menus li {
+	float: left;
+	padding-right: 16px;
+	padding-left: 15px;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	color: #F0F0F0;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	background-image: url(../images/menu.jpg);
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #666666;
+	background-repeat: repeat-x;
+}
+#menus a{
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #FFFFFF;
+	background-repeat: repeat-x;
+	text-decoration: none;
+	text-transform:none;
+	font-weight: bold;
+}
+#menus a:hover
+{
+	background-image: url(../images/menuhover.png);
+	background-repeat: repeat-x;
+	color: #000000;
+}
+#page_body
+{
+	width: 978px;
+	padding-top: 20px;
+	padding-left: 20px;
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 12px;
+	color: #333333;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
