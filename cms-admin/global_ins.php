@@ -4,7 +4,7 @@ if(!success())
 	header("location: login.php");
 require_once("db/dba.php");
 db_connect();
-if($_POST["Submit"]=="Submit")
+if($_POST)
 {
 	$title=$_POST['title'];
 	$email=$_POST['email'];
@@ -15,7 +15,9 @@ if($_POST["Submit"]=="Submit")
 	$email_m=$_POST['email_m'];
 	$Language=$_POST['Language'];
 	$Charset=$_POST['Charset'];
-	
+
+    //echo "UPDATE `global_set` SET `title` = '$title', `email` = '$email', `description` = '$description', `keywords` = '$keywords', `copyright` = '$copyright', `author` = '$author', `email_m` = '$email_m', `Language` = '$Language', `Charset` = '$Charset', `date` = curdate() WHERE `global_set`.`gs_id` = 1 LIMIT 1;";
+
 	$update_query=query("UPDATE `global_set` SET `title` = '$title', `email` = '$email', `description` = '$description', `keywords` = '$keywords', `copyright` = '$copyright', `author` = '$author', `email_m` = '$email_m', `Language` = '$Language', `Charset` = '$Charset', `date` = curdate() WHERE `global_set`.`gs_id` = 1 LIMIT 1;");
 	
 	if($update_query)

@@ -37,12 +37,12 @@ body {
 				  <td height="45" align="center" bgcolor="#ffffff" colspan="5">
 				    <strong>
 				  	<?php 
-						if($_GET['msg']) 
+						if(isset($_GET['msg']))
 							echo base64_decode($_GET['msg']);
 					?>
 					<span style="color:#FF3E3E">
 						<?php 
-						if($_GET['msg2']) 
+						if(isset($_GET['msg2']))
 							echo base64_decode($_GET['msg2']);
 						?>
 					</span>					</strong>				  </td>

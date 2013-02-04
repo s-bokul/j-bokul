@@ -1,6 +1,6 @@
 <?php 
-define(host,"localhost");
-define(user,"root");
-define(pass,"");
-define(db_name,"jatra");
+define('host',"localhost");
+define('user',"root");
+define('pass',"");
+define('db_name',"jatra");
 ?>

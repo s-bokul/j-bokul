@@ -2,7 +2,7 @@
 session_start();
 function success()
 {
-if(!session_is_registered(user_name) && !session_is_registered(number))
+if(!isset($_SESSION["suser"]) && !isset($_SESSION["number"]))
 {
 	return false;
 }

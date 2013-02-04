@@ -37,12 +37,12 @@ body {
 				  <td height="45" align="center" bgcolor="#ffffff" colspan="7">
 				    <strong>
 				  	<?php 
-						if($_GET['msg']) 
+						if(isset($_GET['msg']))
 							echo base64_decode($_GET['msg']);
 					?>
 					<span style="color:#FF3E3E">
 						<?php 
-						if($_GET['msg2']) 
+						if(isset($_GET['msg2']))
 							echo base64_decode($_GET['msg2']);
 						?>
 					</span>
@@ -62,34 +62,34 @@ body {
 				    <td colspan="2" align="center" bgcolor="#4C89D9">Action</td>
 				</tr>
 				<?php
-					$menu_query=query("select `menu_id`, `menu_name`, `parent_menu_id`, `create_date`, `is_active`, `order` from `menus` order by `parent_menu_id` asc");
-					while($result_menu=mysql_fetch_array($menu_query))
-					{
-						$submenu_query=query("select `menu_name` from `menus` where `menu_id`='".$result_menu['parent_menu_id']."'");
-						$submenu_result=mysql_fetch_array($submenu_query);
-						$parent_menu=$submenu_result['menu_name'];
-						if(empty($parent_menu))
-							$parent_menu='None';
-							
-						if($result_menu['is_active']==1)
-							$menu_status="Active";
-						else
-							$menu_status="Inactive";
-						
-						if($color=='#FFFFFF')
-							$color='#FFFF99';
-						else
-							$color='#FFFFFF';
-						echo "<tr bgcolor='".$color."'>
-								  <td height='25' align='left'>".$result_menu['menu_name']."</td>
-								  <td align='left'>".$parent_menu."</td>
-								  <td align='center'>".$result_menu['order']."</td>
-								  <td align='center'>".$result_menu['create_date']."</td>
-								  <td align='center'>".$menu_status."</td>
-								  <td align='center'><a href='edit_pages.php?id=".$result_menu['menu_id']."'><img src='images/edit.png' alt='Edit' border='0' title='Edit' /></a></td>
-								  <td align='center'><a href='page_delete.php?id=".$result_menu['menu_id']."'><img src='images/delete.png' alt='Delete' border='0' title='Delete' /></a></td>
+                $color = '#FFFFFF';
+                $menu_query = query("select `menu_id`, `menu_name`, `parent_menu_id`, `create_date`, `is_active`, `order` from `menus` order by `parent_menu_id` asc");
+                while ($result_menu = mysql_fetch_array($menu_query)) {
+                    $submenu_query = query("select `menu_name` from `menus` where `menu_id`='" . $result_menu['parent_menu_id'] . "'");
+                    $submenu_result = mysql_fetch_array($submenu_query);
+                    $parent_menu = $submenu_result['menu_name'];
+                    if (empty($parent_menu))
+                        $parent_menu = 'None';
+
+                    if ($result_menu['is_active'] == 1)
+                        $menu_status = "Active";
+                    else
+                        $menu_status = "Inactive";
+
+                    if ($color == '#FFFFFF')
+                        $color = '#FFFF99';
+                    else
+                        $color = '#FFFFFF';
+                    echo "<tr bgcolor='" . $color . "'>
+								  <td height='25' align='left'>" . $result_menu['menu_name'] . "</td>
+								  <td align='left'>" . $parent_menu . "</td>
+								  <td align='center'>" . $result_menu['order'] . "</td>
+								  <td align='center'>" . $result_menu['create_date'] . "</td>
+								  <td align='center'>" . $menu_status . "</td>
+								  <td align='center'><a href='edit_pages.php?id=" . $result_menu['menu_id'] . "'><img src='images/edit.png' alt='Edit' border='0' title='Edit' /></a></td>
+								  <td align='center'><a href='page_delete.php?id=" . $result_menu['menu_id'] . "'><img src='images/delete.png' alt='Delete' border='0' title='Delete' /></a></td>
 							  </tr>";
-					}
+                }
 			  ?>
 			</table>
 			

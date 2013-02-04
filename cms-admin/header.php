@@ -7,8 +7,8 @@
 		<li><a href="index.php">Home(Admin)</a></li>
 		<li><a href="pages.php">Pages</a></li>
 		<li><a href="album.php">Photo Gallery</a></li>
-		<li><a href="news.php">News</a></li>
-        <li><a href="registered-bike.php">Registered Bikes</a></li>
+		<!--<li><a href="news.php">News</a></li>-->
+        <!--<li><a href="registered-bike.php">Registered Bikes</a></li>-->
         <li><a href="banner-image.php">Banner Image</a></li>
 		<!--<li><a href="events.php">Event Calender</a></li>-->
 		<!--<li><a href="data_report.php">Notice Board</a></li>-->

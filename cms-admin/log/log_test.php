@@ -35,9 +35,9 @@ if($count==1)
 	//$user="bokul";
 	$user_name=base64_encode($user_name);
 	$user_name=$number.$user_name.$number1;
-	session_register("user_name");
+	/*session_register("user_name");
 	session_register("password");
-	session_register("number");
+	session_register("number");*/
 	$_SESSION["suser"]=$user_name;
 	$_SESSION["number"]=$number;
 	header("Location: ../index.php");
