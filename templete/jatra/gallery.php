@@ -25,9 +25,16 @@
         <td width="794"></td>
       </tr>
       <tr>
-        <td align="left" valign="top" bgcolor="#464646">
+        <td align="left" valign="top" style="background-color: rgba(255, 255, 255, 0.4);">
             <div class="blue demo-container">
                 <ul class="accordion" id="accordion-6">
+                    <?php
+                    $sub_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$_GET['p_id']."' order by `album_id` asc;");
+                    while($result_submenu = mysql_fetch_array($sub_menu_query))
+                    {
+                        echo '<li><a href="index.php?p_id='.$_GET['p_id'].'&album_id='.$result_submenu['album_id'].'" class="sidemenu">'.$result_submenu['album_name'].'</a></li>';
+                    }
+                    ?>
                     <li><a href="#">Home</a>
                         <ul>
                             <li><a href="#">Page 1</a></li>
@@ -146,7 +153,7 @@
             </div>
         <table width="184" border="0" cellspacing="0" cellpadding="0">
         	<?php
-				$sub_menu_query=query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$_GET['p_id']."' order by `album_id` asc;");
+				$sub_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$_GET['p_id']."' order by `album_id` asc;");
 				while($result_submenu = mysql_fetch_array($sub_menu_query))
 				{
 					echo '<tr>
@@ -159,16 +166,16 @@
 			?>
         </table>
         </td>
-        <td align="left" valign="top">
+        <td align="left" valign="top" style="background-color: rgba(255, 255, 255, 0.4);">
         <table width="790" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td></td>
-            <td align="center" valign="top" bgcolor="#FFFFFF" height="5">
+            <td align="center" valign="top" height="5">
             </td>
           </tr>
           <tr>
             <td width="5"></td>
-            <td width="785" align="center" valign="top" bgcolor="#FFFFFF">
+            <td width="785" align="center" valign="top">
             <table width="775" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
                 <td align="left" valign="top">

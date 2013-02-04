@@ -18,6 +18,7 @@
     color: #fff;
     border-bottom: 1px solid #013d6c;
     border-top: 1px solid #4695d3;
+    font: normal 13px Arial, sans-serif;
 }
 
 .blue .accordion ul a {
