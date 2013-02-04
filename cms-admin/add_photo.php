@@ -51,7 +51,7 @@ a:hover
                 <tr>
                   <td height="30" align="center">
 					<?php
-						if($_GET['msg'] or $_GET['msg2'])
+						if(isset($_GET['msg']) or isset($_GET['msg2']))
 							echo "<strong>
 									<a href='photos.php?id=".$_GET['id']."'>Back To Album </a>
 								  </strong>";
@@ -63,12 +63,12 @@ a:hover
                   <td height="30" align="center">
 				  <strong>
 				  	<?php 
-						if($_GET['msg']) 
+						if(isset($_GET['msg']))
 							echo base64_decode($_GET['msg']);
 					?>
 					<span style="color:#FF3E3E">
 						<?php 
-						if($_GET['msg2']) 
+						if(isset($_GET['msg2']))
 							echo base64_decode($_GET['msg2']);
 						?>
 					</span>					</strong>				  </td>

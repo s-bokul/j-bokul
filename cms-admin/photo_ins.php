@@ -19,7 +19,7 @@ $maxid=((strlen($maxid)<2) ? "0".$maxid : $maxid);
 $maxid=((strlen($maxid)<3) ? "0".$maxid : $maxid);
 $RecordID="PH-".$maxid;
 
-$img=$RecordID;
+echo $img=$RecordID;
 /////////////////Photo Upload/////////////////////
 $fileField=$_FILES['photo']['tmp_name'];
 		if (is_uploaded_file($_FILES['photo']['tmp_name'])) 
