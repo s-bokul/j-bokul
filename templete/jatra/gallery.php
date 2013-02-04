@@ -5,7 +5,7 @@
 <script type="text/javascript">
     $(document).ready(function($){
         $('#accordion-6').dcAccordion({
-            eventType: 'hover',
+            eventType: 'click',
             autoClose: false,
             saveState: false,
             disableLink: false,
@@ -21,21 +21,33 @@
     <td align="left" valign="top">
     <table width="978" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td width="184" height="5"></td>
-        <td width="794"></td>
+        <td width="220" height="5"></td>
+        <td width="10" height="5"></td>
+        <td width="748"></td>
       </tr>
       <tr>
         <td align="left" valign="top" style="background-color: rgba(255, 255, 255, 0.4);">
             <div class="blue demo-container">
                 <ul class="accordion" id="accordion-6">
                     <?php
-                    $sub_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$_GET['p_id']."' order by `album_id` asc;");
+                    $sub_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='".$_GET['p_id']."' and `is_active`='1' order by `order` asc;");
+                    //$sub_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$_GET['p_id']."' order by `album_id` asc;");
                     while($result_submenu = mysql_fetch_array($sub_menu_query))
                     {
-                        echo '<li><a href="index.php?p_id='.$_GET['p_id'].'&album_id='.$result_submenu['album_id'].'" class="sidemenu">'.$result_submenu['album_name'].'</a></li>';
+                        echo '<li>';
+                        //echo '<a href="index.php?p_id='.$_GET['p_id'].'&sub_id='.$result_submenu['menu_id'].'" class="sidemenu">'.$result_submenu['menu_name'].'</a>';
+                        echo '<a href="javascript:void(0)">'.$result_submenu['menu_name'].'</a>';
+                        $sub_album_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$result_submenu['menu_id']."' order by `album_id` asc;");
+                        while($result_album_submenu = mysql_fetch_array($sub_album_menu_query))
+                        {
+                            echo '<ul>';
+                            echo '<li><a href="index.php?p_id='.$_GET['p_id'].'&sub_id='.$result_submenu['menu_id'].'&album_id='.$result_album_submenu['album_id'].'">'.$result_album_submenu["album_name"].'</a></li>';
+                            echo '</ul>';
+                        }
+                        echo '</li>';
                     }
                     ?>
-                    <li><a href="#">Home</a>
+                    <!--<li><a href="javascript:void(0)">Home</a>
                         <ul>
                             <li><a href="#">Page 1</a></li>
                             <li><a href="#">Page 2</a></li>
@@ -148,12 +160,12 @@
                             <li><a href="#">Service 4</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Contact us</a></li>-->
                 </ul>
             </div>
-        <table width="184" border="0" cellspacing="0" cellpadding="0">
+        <!--<table width="184" border="0" cellspacing="0" cellpadding="0">
         	<?php
-				$sub_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$_GET['p_id']."' order by `album_id` asc;");
+/*				$sub_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$_GET['p_id']."' order by `album_id` asc;");
 				while($result_submenu = mysql_fetch_array($sub_menu_query))
 				{
 					echo '<tr>
@@ -163,11 +175,12 @@
 							<td height="5"></td>
 						  </tr>';
 				}
-			?>
-        </table>
+			*/?>
+        </table>-->
         </td>
+        <td width="10" style="background-color: rgba(255, 255, 255, 0);"></td>
         <td align="left" valign="top" style="background-color: rgba(255, 255, 255, 0.4);">
-        <table width="790" border="0" cellspacing="0" cellpadding="0">
+        <table width="740" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td></td>
             <td align="center" valign="top" height="5">
@@ -175,8 +188,8 @@
           </tr>
           <tr>
             <td width="5"></td>
-            <td width="785" align="center" valign="top">
-            <table width="775" border="0" align="center" cellpadding="0" cellspacing="0">
+            <td width="735" align="center" valign="top">
+            <table width="725" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
                 <td align="left" valign="top">
                 	<?php

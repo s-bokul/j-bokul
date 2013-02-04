@@ -4,7 +4,7 @@ ul.text {margin-bottom: 1em; line-height: 1.5em;}
 .text-center {text-align: center;}
 h2 {font: normal 26px Arial, sans-serif; padding: 20px 0; margin: 0 0 30px 0;}
 .wrap {width: 960px; margin: 0 auto;}
-.demo-container {padding: 20px; float: left; width: 260px;}
+.demo-container {padding: 10px; float: left; width: 200px;}
 .demo-container h4 {font-size: 14px; margin: 0 0 5px 0;}
 .clear {clear: both;}
 

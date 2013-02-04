@@ -48,8 +48,8 @@ body {
 					    <td align="left">
                         	<select name="parent" id="parent">
                               <?php
-							  echo "select `menu_id`, `menu_name` from `menus` where `parent_menu_id`='0' and `is_gallery`='1';";
-                                $menu_query=query("select `menu_id`, `menu_name` from `menus` where `parent_menu_id`='0' and `is_gallery`='1';");
+							  //echo "select `menu_id`, `menu_name` from `menus` where `parent_menu_id`='0' and `is_gallery`='1';";
+                                $menu_query=query("select `menu_id`, `menu_name` from `menus` where `is_gallery`='1';");
                                 while($result_menu=mysql_fetch_array($menu_query))
                                 {
                                     echo "<option value='".$result_menu['menu_id']."'>".$result_menu['menu_name']."</option>";

@@ -24,7 +24,7 @@ height:160px;
 
 #page_body{
 width: 980px;
-height:508px;
+min-height:300px;
 margin-top:0px;
 overflow:hidden;
 margin: 0px auto;

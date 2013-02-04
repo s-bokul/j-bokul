@@ -12,7 +12,8 @@
 
 .blue .accordion a {
     padding: 10px 10px 10px 15px;
-    background: #0D5995;
+    background-color: rgba(13, 89, 149, 0.8);
+    /*background: #0D5995;*/
     text-decoration: none;
     display: block;
     color: #fff;
@@ -34,7 +35,8 @@
 }
 
 .blue .accordion a:hover {
-    background: #05477c;
+    /*background: #05477c;*/
+    background-color: rgba(5, 71, 124, 0.8);;
 }
 
 .blue .accordion a:active {
