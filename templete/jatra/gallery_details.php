@@ -114,8 +114,34 @@
                             <td align="center">
                                 <table width="720" border="0" align="center" cellpadding="0" cellspacing="0">
                                     <tr>
-                                        <td>
-                                            <img src="../upload_big/<?php echo $pic_dir;?>" alt="<?php echo $title;?>" width="490" height="auto"/>
+                                        <td align="center">
+                                            <ul class="thumbnails">
+                                                <li class="span4">
+                                                    <a class="thumbnail" href="javascript:void(0)"><img src="../upload_big/<?php echo $pic_dir;?>" alt="<?php echo $title;?>" style="width: 490px; height: 270px;" /></a>
+                                                </li>
+                                                <li class="span3">
+                                                    <?php if(!empty($previous_pic_dir)) { ?>
+                                                    <?php echo '<a class="thumbnail" href="index.php?p_id='.$_GET['p_id'].'&album_id='.$_GET['album_id'].'&photo_id='.$previous_photo_id.'">';?>
+                                                        <img src="../upload_big/<?php echo $previous_pic_dir;?>" alt="<?php echo $previous_title;?>" style="width: 260px; height: 120px;" />
+                                                    <?php echo '</a>'; ?>
+                                                    <?php } else { ?>
+                                                    <?php echo '<a class="thumbnail" href="javascript:void(0)">';?>
+                                                        <img alt="No Image" style="width: 260px; height: 120px;" src="../upload_big/no_image.gif">
+                                                    <?php echo '</a>'; ?>
+                                                    <?php } ?>
+                                                </li>
+                                                <li class="span3">
+                                                    <?php if(!empty($next_pic_dir)) { ?>
+                                                    <?php echo '<a class="thumbnail" href="index.php?p_id='.$_GET['p_id'].'&album_id='.$_GET['album_id'].'&photo_id='.$next_photo_id.'">';?>
+                                                        <img src="../upload_big/<?php echo $next_pic_dir;?>" alt="<?php echo $next_title;?>" style="width: 260px; height: 120px;" />
+                                                    <?php echo '</a>'; ?>
+                                                    <?php } else { ?>
+                                                    <?php echo '<a class="thumbnail" href="javascript:void(0)">';?>
+                                                    <img alt="No Image" style="width: 260px; height: 120px;" src="../upload_big/no_image.gif">
+                                                    <?php echo '</a>'; ?>
+                                                    <?php } ?>
+                                                </li>
+                                            </ul>
                                         </td>
                                     </tr>
                                 </table>

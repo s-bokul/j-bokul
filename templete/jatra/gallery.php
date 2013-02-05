@@ -229,7 +229,7 @@
 										$album_id=$gallery_images_result['album_id'];
 									echo '<li class="span3">
 									        <div class="thumbnail">
-											    <a href="index.php?p_id='.$_GET['p_id'].'&album_id='.$album_id.'&photo_id='.$gallery_images_result['photo_id'].'" class="thumbnail"><img src="../upload_small/'.$gallery_images_result['pic_dir'].'" style="width: 260px; height: auto;" alt="'.$gallery_images_result['title'].'" /></a>
+											    <a href="index.php?p_id='.$_GET['p_id'].'&album_id='.$album_id.'&photo_id='.$gallery_images_result['photo_id'].'"><img src="../upload_small/'.$gallery_images_result['pic_dir'].'" style="width: 260px; height: auto;" alt="'.$gallery_images_result['title'].'" /></a>
 											    <h5>'.$gallery_images_result['title'].'</h5>
 											</div>
 							              </li>';
