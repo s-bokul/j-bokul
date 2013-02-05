@@ -9,8 +9,10 @@
     ?>
     <link rel="shortcut icon" href="images/jatra-icon.png"/>
     <link href="<?php echo $path; ?>css/jatra_css.css" type="text/css" rel="stylesheet"/>
+    <link href="<?php echo $path; ?>css/bootstrap.css" type="text/css" rel="stylesheet"/>
     <!-- javasript-->
     <script type="text/javascript" src="<?php echo $path; ?>js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="<?php echo $path; ?>js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#left").click(function () {

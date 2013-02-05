@@ -200,14 +200,15 @@
 						$album_query = query("SELECT `description` FROM `photo_album` where `album_id`='".$_GET['album_id']."';");
 						$album_result = mysql_fetch_array($album_query);
 						$description = $album_result['description'];
-						echo '<div style="float:left;display:block;width:690px;">'.$description.'</div>';
+						//echo '<div style="float:left;display:block;width:690px;">'.$description.'</div>';
 					}
 					?>
                 </td>
               </tr>
               <tr>
                 <td align="center" valign="top" height="300px">
-                    <div id="gallerys" align="center" style="height:auto;">
+                    <div id="gallerys" class="row-fluid" align="center" style="height:auto;">
+                        <ul class="thumbnails">
                     	<?php
 							if(empty($_GET['album_id']))
 							{
@@ -226,10 +227,12 @@
 								{
 									if(empty($_GET['album_id']))
 										$album_id=$gallery_images_result['album_id'];
-									echo '<li>
-											<a href="index.php?p_id='.$_GET['p_id'].'&album_id='.$album_id.'&photo_id='.$gallery_images_result['photo_id'].'"><img src="../upload_small/'.$gallery_images_result['pic_dir'].'" alt="'.$gallery_images_result['title'].'" /></a>
-								<a href="index.php?p_id='.$_GET['p_id'].'&album_id='.$album_id.'&photo_id='.$gallery_images_result['photo_id'].'">'.$gallery_images_result['title'].'</a>
-							</li>';
+									echo '<li class="span3">
+									        <div class="thumbnail">
+											    <a href="index.php?p_id='.$_GET['p_id'].'&album_id='.$album_id.'&photo_id='.$gallery_images_result['photo_id'].'" class="thumbnail"><img src="../upload_small/'.$gallery_images_result['pic_dir'].'" style="width: 260px; height: auto;" alt="'.$gallery_images_result['title'].'" /></a>
+											    <h5>'.$gallery_images_result['title'].'</h5>
+											</div>
+							              </li>';
 								}
 							}
 							else
@@ -238,7 +241,9 @@
 									echo '<br /><br /><div style="height:200px;">There are nothing to see in this gallery</div>';
 							}
 						?>
-                    </div>                </td>
+                        </ul>
+                    </div>
+                </td>
               </tr>
               <tr>
                 <td align="center" height="10">                </td>
