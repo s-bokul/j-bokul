@@ -26,8 +26,15 @@
                 $("#marq").attr("direction", "right");
                 return 0;
             });
+
+            $('.banner-tip').tooltip('toggle');
         });
     </script>
+
+    <style type="text/css">
+
+
+    </style>
 
 
 </head>
@@ -42,25 +49,88 @@
     <div class="clear-both"></div>
     <div id="page_body" align="center">
         <div class="nav">
-            <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+        <div class="menu">
+
+        <ul>
+            <?php
+                $main_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='0' and `is_active`='1' order by `order` asc;");
+                $count = mysql_num_rows($main_menu_query);
+                $i = 0;
+                while($main_menu_result = mysql_fetch_array($main_menu_query))
+                {
+                    echo '<li>';
+                    echo '<a class="hide" href="index.php?p_id='.$main_menu_result['menu_id'].'">'.$main_menu_result['menu_name'].'</a></td>';
+                    $sub_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='".$main_menu_result['menu_id']."' and `is_active`='1' order by `order` asc;");
+                    while($sub_menu_result = mysql_fetch_array($sub_menu_query))
+                    {
+                        echo '<ul>';
+                        echo '<li><a href="../menu/zero_dollars.html" title="The zero dollar ads page">'.$sub_menu_result['menu_name'].'</a></li>';
+                        echo '</ul>';
+                    }
+                }
+            ?>
+        <!--<li><a class="hide" href="../menu/index.html">DEMOS</a>
+
+            <ul>
+                <li><a href="../menu/zero_dollars.html" title="The zero dollar ads page">zero dollars</a></li>
+                <li><a href="../menu/embed.html" title="Wrapping text around images">wrapping text</a></li>
+                <li><a href="../menu/form.html" title="Styling forms">styled form</a></li>
+                <li><a href="../menu/nodots.html" title="Removing active/focus borders">active focus</a></li>
+
+            </ul>
+
+        </li>
+
+        <li><a class="hide" href="index.html">MENUS</a>
+
+            <ul>
+                <li><a href="spies.html" title="a coded list of spies">spies menu</a></li>
+                <li><a href="vertical.html" title="a horizontal vertical menu">vertical menu</a></li>
+                <li><a href="expand.html" title="an enlarging unordered list">enlarging list</a></li>
+                <li><a href="enlarge.html" title="an unordered list with link images">link images</a></li>
+                <li><a href="cross.html" title="non-rectangular links">non-rectangular</a></li>
+                <li><a href="jigsaw.html" title="jigsaw links">jigsaw links</a></li>
+                <li><a href="circles.html" title="circular links">circular links</a></li>
+            </ul>
+
+        </li>
+
+        <li><a class="hide" href="../boxes/index.html">BOXES</a>
+
+            <ul>
+                <li><a href="spies.html" title="a coded list of spies">spies menu</a></li>
+                <li><a href="vertical.html" title="a horizontal vertical menu">vertical menu</a></li>
+                <li><a href="expand.html" title="an enlarging unordered list">enlarging list</a></li>
+                <li><a href="enlarge.html" title="an unordered list with link images">link images</a></li>
+                <li><a href="cross.html" title="non-rectangular links">non-rectangular</a></li>
+                <li><a href="jigsaw.html" title="jigsaw links">jigsaw links</a></li>
+                <li><a href="circles.html" title="circular links">circular links</a></li>
+            </ul>
+
+        </li>-->
+
+        </ul>
+
+        </div>
+            <!--<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
                 <tr>
                     <?php
-                    $main_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='0' and `is_active`='1' order by `order` asc;");
+/*                    $main_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='0' and `is_active`='1' order by `order` asc;");
                     $count = mysql_num_rows($main_menu_query);
                     $i = 0;
                     while($main_menu_result = mysql_fetch_array($main_menu_query))
                     {
                         echo '<td align="center"><a href="index.php?p_id='.$main_menu_result['menu_id'].'" class="menu">'.$main_menu_result['menu_name'].'</a></td>';
                     }
-                    ?>
+                    */?>
                     <!--<td align="center"><a href="#" class="menu">asd</a></td>
                     <td align="center"><a href="#" class="menu">asd</a></td>
                     <td align="center"><a href="#" class="menu">asd</a></td>
                     <td align="center"><a href="#" class="menu">asd</a></td>
                     <td align="center"><a href="#" class="menu">asd</a></td>
-                    <td align="center"><a href="#" class="menu">asd</a></td>-->
+                    <td align="center"><a href="#" class="menu">asd</a></td>
                 </tr>
-            </table>
+            </table>-->
         </div>
         <div class="clear-both"></div>
         <?php
@@ -84,7 +154,7 @@
                     <td>
                         <marquee behavior="scroll" direction="left" onmouseover="stop();" onmouseout="start();"
                                  scrollamount="2" id="marq">
-                            <img src="<?php echo $path; ?>images/model/m1.png" width="356" height="500"/>
+                            <a class="banner-tip" href="#" data-placement="top" data-toggle="tooltip" data-original-title="Tooltip on top" title="Tooltip on top" ><img src="<?php echo $path; ?>images/model/m1.png" width="356" height="500"/></a>
                             <img src="<?php echo $path; ?>images/model/m2.png" width="361" height="500"/>
                             <img src="<?php echo $path; ?>images/model/m3.png" width="563" height="500"/>
                             <img src="<?php echo $path; ?>images/model/m4.png" width="340" height="500"/>

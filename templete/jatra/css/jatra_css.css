@@ -55,8 +55,25 @@ position:relative;
     margin: 5px auto;
 }
 
+/* ================================================================
+           This copyright notice must be untouched at all times.
+
+           The original version of this stylesheet and the associated (x)html
+           is available at http://www.cssplay.co.uk/menus/dd_valid.html
+           Copyright (c) 2005-2007 Stu Nicholls. All rights reserved.
+           This stylesheet and the assocaited (x)html may be modified in any
+           way to fit your requirements.
+           =================================================================== */
+/* common styling */
 .menu {
-    background-image:url(../images/menu-bg.png);
+    width: 750px;
+    position: relative;
+    font-size: 12px;
+    z-index: 100;
+}
+
+.menu ul li a, .menu ul li a:visited {
+    background-image: url(../images/menu-bg.png);
     text-align: center;
     text-decoration: none;
     width: 130px;
@@ -65,6 +82,83 @@ position:relative;
     padding-top: 8px;
     color: #000000;
 }
+
+.menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu ul li {
+    float: left;
+    position: relative;
+}
+
+.menu ul li ul {
+    display: none;
+}
+
+/* specific to non IE browsers */
+.menu ul li:hover a {
+    color: #fff;
+}
+
+.menu ul li:hover ul {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 105px;
+}
+
+.menu ul li:hover ul li a.hide {
+    /*background: #65a832;*/
+    background-color: rgba(101, 168, 50, 0.4);
+    color: #fff;
+}
+
+.menu ul li:hover ul li:hover a.hide {
+    background: #6fc;
+    color: #000;
+}
+
+.menu ul li:hover ul li ul {
+    display: none;
+}
+
+.menu ul li:hover ul li a {
+    display: block;
+    background-color: rgba(13, 89, 149, 0.8);
+    background-image: none;
+    color: #000;
+}
+
+.menu ul li:hover ul li a:hover {
+    background-color: rgba(101, 168, 50, 0.4);
+    color: #000;
+}
+
+.menu ul li:hover ul li:hover ul {
+    display: block;
+    position: absolute;
+    left: 105px;
+    top: 0;
+}
+
+.menu ul li:hover ul li:hover ul.left {
+    left: -105px;
+}
+
+/*.menu {
+    background-image:url(../images/menu-bg.png);
+    text-align: center;
+    text-decoration: none;
+    width: 130px;
+    height: 30px;
+    display: block;
+    padding-top: 8px;
+    color: #000000;
+}*/
 .arrows{
     height: 300px;
     width: 20px;
