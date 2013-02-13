@@ -5,9 +5,9 @@
 <script type="text/javascript">
     $(document).ready(function($){
         $('#accordion-6').dcAccordion({
-            eventType: 'click',
-            autoClose: false,
-            saveState: false,
+            eventType: 'hover',
+            autoClose: true,
+            saveState: true,
             disableLink: false,
             showCount: false,
             menuClose: true,
@@ -30,13 +30,21 @@
             <div class="blue demo-container">
                 <ul class="accordion" id="accordion-6">
                     <?php
-                    $sub_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='".$_GET['p_id']."' and `is_active`='1' order by `order` asc;");
+                    $p_id = $_GET['p_id'];
+
+                    $p_id_query = query("select `parent_menu_id` from `menus` where `menu_id`='".$p_id."' and `parent_menu_id` != '0';");
+                    if(mysql_num_rows($p_id_query) > 0) {
+                        $p_id_result = mysql_fetch_array($p_id_query);
+                        $p_id = $p_id_result['parent_menu_id'];
+                    }
+
+                    $sub_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='".$p_id."' and `is_active`='1' order by `order` asc;");
                     //$sub_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$_GET['p_id']."' order by `album_id` asc;");
                     while($result_submenu = mysql_fetch_array($sub_menu_query))
                     {
                         echo '<li>';
-                        //echo '<a href="index.php?p_id='.$_GET['p_id'].'&sub_id='.$result_submenu['menu_id'].'" class="sidemenu">'.$result_submenu['menu_name'].'</a>';
-                        echo '<a href="javascript:void(0)">'.$result_submenu['menu_name'].'</a>';
+                        echo '<a href="index.php?p_id='.$result_submenu['menu_id'].'" class="sidemenu">'.$result_submenu['menu_name'].'</a>';
+                        //echo '<a href="javascript:void(0)">'.$result_submenu['menu_name'].'</a>';
                         $sub_album_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$result_submenu['menu_id']."' order by `album_id` asc;");
                         while($result_album_submenu = mysql_fetch_array($sub_album_menu_query))
                         {
@@ -47,120 +55,6 @@
                         echo '</li>';
                     }
                     ?>
-                    <!--<li><a href="javascript:void(0)">Home</a>
-                        <ul>
-                            <li><a href="#">Page 1</a></li>
-                            <li><a href="#">Page 2</a></li>
-                            <li><a href="#">Page 3</a></li>
-                            <li><a href="#">Page 4</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a href="#">Products</a>
-                        <ul>
-                            <li><a href="#">Mobile Phones &#038; Accessories</a>
-                                <ul>
-                                    <li><a href="#">Product 1</a>
-                                        <ul>
-                                            <li><a href="#">Part A</a>
-
-                                            </li>
-                                            <li><a href="#">Part B</a></li>
-                                            <li><a href="#">Part C</a></li>
-                                            <li><a href="#">Part D</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Product 2</a>
-                                        <ul>
-                                            <li><a href="#">Part A</a></li>
-                                            <li><a href="#">Part B</a></li>
-                                            <li><a href="#">Part C</a></li>
-                                            <li><a href="#">Part D</a></li>
-                                        </ul>
-
-                                    </li>
-                                    <li><a href="#">Product 3</a>
-                                        <ul>
-                                            <li><a href="#">Part A</a></li>
-                                            <li><a href="#">Part B</a></li>
-                                            <li><a href="#">Part C</a></li>
-                                            <li><a href="#">Part D</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Desktop</a>
-                                <ul>
-                                    <li><a href="#">Product 4</a></li>
-                                    <li><a href="#">Product 5</a></li>
-                                    <li><a href="#">Product 6</a></li>
-                                    <li><a href="#">Product 7</a></li>
-                                    <li><a href="#">Product 8</a></li>
-                                    <li><a href="#">Product 9</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Laptop</a>
-                                <ul>
-                                    <li><a href="#">Product 10</a></li>
-                                    <li><a href="#">Product 11</a>
-                                        <ul>
-                                            <li><a href="#">Part E</a></li>
-                                            <li><a href="#">Part F</a></li>
-                                            <li><a href="#">Part G</a></li>
-                                            <li><a href="#">Part H</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Product 12</a></li>
-                                    <li><a href="#">Product 13</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Accessories</a>
-                                <ul>
-                                    <li><a href="#">Product 14</a></li>
-                                    <li><a href="#">Product 15</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Software</a>
-                                <ul>
-                                    <li><a href="#">Product 16</a></li>
-                                    <li><a href="#">Product 17</a></li>
-                                    <li><a href="#">Product 18</a></li>
-                                    <li><a href="#">Product 19</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#">About Us</a>
-                        <ul>
-                            <li><a href="#">About Page 1</a></li>
-                            <li><a href="#">About Page 2</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a href="#">Services</a>
-                        <ul>
-                            <li><a href="#">Service 1</a>
-                                <ul>
-                                    <li><a href="#">Service Detail A</a></li>
-                                    <li><a href="#">Service Detail B</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Service 2</a>
-                                <ul>
-                                    <li><a href="#">Service Detail C</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Service 3</a>
-                                <ul>
-                                    <li><a href="#">Service Detail D</a></li>
-                                    <li><a href="#">Service Detail E</a></li>
-                                    <li><a href="#">Service Detail F</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Service 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Contact us</a></li>-->
                 </ul>
             </div>
         <!--<table width="184" border="0" cellspacing="0" cellpadding="0">

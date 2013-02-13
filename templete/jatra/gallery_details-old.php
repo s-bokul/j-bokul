@@ -5,9 +5,9 @@
 <script type="text/javascript">
     $(document).ready(function($){
         $('#accordion-6').dcAccordion({
-            eventType: 'hover',
-            autoClose: true,
-            saveState: true,
+            eventType: 'click',
+            autoClose: false,
+            saveState: false,
             disableLink: false,
             showCount: false,
             menuClose: true,
@@ -40,15 +40,7 @@
             <div class="blue demo-container">
                 <ul class="accordion" id="accordion-6">
                     <?php
-                    $p_id = $_GET['p_id'];
-
-                    $p_id_query = query("select `parent_menu_id` from `menus` where `menu_id`='".$p_id."' and `parent_menu_id` != '0';");
-                    if(mysql_num_rows($p_id_query) > 0) {
-                        $p_id_result = mysql_fetch_array($p_id_query);
-                        $p_id = $p_id_result['parent_menu_id'];
-                    }
-
-                    $sub_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='".$p_id."' and `is_active`='1' order by `order` asc;");
+                    $sub_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='".$_GET['p_id']."' and `is_active`='1' order by `order` asc;");
                     //$sub_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$_GET['p_id']."' order by `album_id` asc;");
                     while($result_submenu = mysql_fetch_array($sub_menu_query))
                     {

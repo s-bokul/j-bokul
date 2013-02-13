@@ -61,15 +61,20 @@
                     echo '<li>';
                     echo '<a class="hide" href="index.php?p_id='.$main_menu_result['menu_id'].'">'.$main_menu_result['menu_name'].'</a></td>';
                     $sub_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='".$main_menu_result['menu_id']."' and `is_active`='1' order by `order` asc;");
+                    $count_result = mysql_num_rows($sub_menu_query);
+                    if($count_result > 0) {
+                        echo '<ul>';
+                    }
                     while($sub_menu_result = mysql_fetch_array($sub_menu_query))
                     {
-                        echo '<ul>';
-                        echo '<li><a href="../menu/zero_dollars.html" title="The zero dollar ads page">'.$sub_menu_result['menu_name'].'</a></li>';
+                        echo '<li><a href="index.php?p_id='.$sub_menu_result['menu_id'].'" title="'.$sub_menu_result['menu_name'].'">'.$sub_menu_result['menu_name'].'</a></li>';
+                    }
+                    if($count_result > 0) {
                         echo '</ul>';
                     }
                 }
             ?>
-        <!--<li><a class="hide" href="../menu/index.html">DEMOS</a>
+        <li><a class="hide" href="../menu/index.html">DEMOS</a>
 
             <ul>
                 <li><a href="../menu/zero_dollars.html" title="The zero dollar ads page">zero dollars</a></li>
@@ -81,33 +86,33 @@
 
         </li>
 
-        <li><a class="hide" href="index.html">MENUS</a>
+            <!--<li><a class="hide" href="index.html">MENUS</a>
 
-            <ul>
-                <li><a href="spies.html" title="a coded list of spies">spies menu</a></li>
-                <li><a href="vertical.html" title="a horizontal vertical menu">vertical menu</a></li>
-                <li><a href="expand.html" title="an enlarging unordered list">enlarging list</a></li>
-                <li><a href="enlarge.html" title="an unordered list with link images">link images</a></li>
-                <li><a href="cross.html" title="non-rectangular links">non-rectangular</a></li>
-                <li><a href="jigsaw.html" title="jigsaw links">jigsaw links</a></li>
-                <li><a href="circles.html" title="circular links">circular links</a></li>
-            </ul>
+                <ul>
+                    <li><a href="spies.html" title="a coded list of spies">spies menu</a></li>
+                    <li><a href="vertical.html" title="a horizontal vertical menu">vertical menu</a></li>
+                    <li><a href="expand.html" title="an enlarging unordered list">enlarging list</a></li>
+                    <li><a href="enlarge.html" title="an unordered list with link images">link images</a></li>
+                    <li><a href="cross.html" title="non-rectangular links">non-rectangular</a></li>
+                    <li><a href="jigsaw.html" title="jigsaw links">jigsaw links</a></li>
+                    <li><a href="circles.html" title="circular links">circular links</a></li>
+                </ul>
 
-        </li>
+            </li>
 
-        <li><a class="hide" href="../boxes/index.html">BOXES</a>
+            <li><a class="hide" href="../boxes/index.html">BOXES</a>
 
-            <ul>
-                <li><a href="spies.html" title="a coded list of spies">spies menu</a></li>
-                <li><a href="vertical.html" title="a horizontal vertical menu">vertical menu</a></li>
-                <li><a href="expand.html" title="an enlarging unordered list">enlarging list</a></li>
-                <li><a href="enlarge.html" title="an unordered list with link images">link images</a></li>
-                <li><a href="cross.html" title="non-rectangular links">non-rectangular</a></li>
-                <li><a href="jigsaw.html" title="jigsaw links">jigsaw links</a></li>
-                <li><a href="circles.html" title="circular links">circular links</a></li>
-            </ul>
+                <ul>
+                    <li><a href="spies.html" title="a coded list of spies">spies menu</a></li>
+                    <li><a href="vertical.html" title="a horizontal vertical menu">vertical menu</a></li>
+                    <li><a href="expand.html" title="an enlarging unordered list">enlarging list</a></li>
+                    <li><a href="enlarge.html" title="an unordered list with link images">link images</a></li>
+                    <li><a href="cross.html" title="non-rectangular links">non-rectangular</a></li>
+                    <li><a href="jigsaw.html" title="jigsaw links">jigsaw links</a></li>
+                    <li><a href="circles.html" title="circular links">circular links</a></li>
+                </ul>
 
-        </li>-->
+            </li>-->
 
         </ul>
 
@@ -160,40 +165,6 @@
                             <img src="<?php echo $path; ?>images/model/m4.png" width="340" height="500"/>
                             <img src="<?php echo $path; ?>images/model/m5.png" width="376" height="500"/>
                             <img src="<?php echo $path; ?>images/model/m6.png" width="373" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m7.png" width="375" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m8.png" width="379" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m9.png" width="383" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m10.png" width="381" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p1.png" width="750" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p2.png" width="750" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p3.png" width="667" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p4.png" width="736" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p5.png" width="708" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p11.png" width="336" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p7.png" width="376" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p8.png" width="500" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p9.png" width="557" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p10.png" width="318" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m11.png" width="386" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m12.png" width="386" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m13.png" width="373" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m14.png" width="375" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m15.png" width="372" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m16.png" width="371" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m17.png" width="699" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m18.png" width="372" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m19.png" width="371" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m20.png" width="370" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p11.png" width="336" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p12.png" width="752" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p13.png" width="752" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p14.png" width="622" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p15.png" width="301" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p16.png" width="334" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p17.png" width="374" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p18.png" width="663" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p19.png" width="736" height="500"/>
-                            <img src="<?php echo $path; ?>images/products/p20.png" width="302" height="500"/>
                         </marquee>
                     </td>
                     <td width="20px" align="right" valign="middle"><a href="javascript:void(0)" id="right"
