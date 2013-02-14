@@ -96,7 +96,7 @@ Rounded("div#minipics li","#EEEEEE","#FFF");
 					  	<div id="minipics">
 							<ul>
 								<?php
-									$album_query=query("select `album_id`, `album_name`, `status` from `photo_album` order by `album_id` asc;");
+									$album_query=query("select `album_id`, `album_name`, `status`, `menu_name` from `photo_album`, `menus` where `menus`.`menu_id` = `photo_album`.`menu_id` order by `album_id` asc;");
 									$i=0;
 									while($result_album=mysql_fetch_array($album_query))
 									{
@@ -104,7 +104,7 @@ Rounded("div#minipics li","#EEEEEE","#FFF");
 											$status="Active";
 										else
 											$status="Inactive";
-										echo "<li><strong>Album Name : </strong>".$result_album['album_name']."<img src='images/album_ico.png' alt='Album $i'><br /><strong>Status : </strong>$status<br /><a href='photos.php?id=".$result_album['album_id']."'>Photos</a><br /><a href='del_album.php?id=".$result_album['album_id']."'>Delete Album</a><br /><a href='edit_album.php?id=".$result_album['album_id']."'>Edit Album</a></li>";	
+										echo "<li><strong>Album Name : </strong>".$result_album['album_name']."<img src='images/album_ico.png' alt='Album $i'><br /><strong>Parent : </strong>".$result_album['menu_name']."<br /><a href='photos.php?id=".$result_album['album_id']."'>Photos</a><br /><a href='del_album.php?id=".$result_album['album_id']."'>Delete Album</a><br /><a href='edit_album.php?id=".$result_album['album_id']."'>Edit Album</a></li>";
 										 ++$i;									
 									}
 								?>

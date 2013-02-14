@@ -5,12 +5,12 @@
 <script type="text/javascript">
     $(document).ready(function($){
         $('#accordion-6').dcAccordion({
-            eventType: 'hover',
-            autoClose: true,
+            eventType: 'click',
+            autoClose: false,
             saveState: true,
             disableLink: false,
             showCount: false,
-            menuClose: true,
+            menuClose: false,
             speed: 'slow'
         });
     });
@@ -38,13 +38,14 @@
                         $p_id = $p_id_result['parent_menu_id'];
                     }
 
-                    $sub_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='".$p_id."' and `is_active`='1' order by `order` asc;");
+                    $sub_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='".$_GET['p_id']."' and `is_active`='1' order by `order` asc;");
                     //$sub_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$_GET['p_id']."' order by `album_id` asc;");
                     while($result_submenu = mysql_fetch_array($sub_menu_query))
                     {
                         echo '<li>';
-                        echo '<a href="index.php?p_id='.$result_submenu['menu_id'].'" class="sidemenu">'.$result_submenu['menu_name'].'</a>';
-                        //echo '<a href="javascript:void(0)">'.$result_submenu['menu_name'].'</a>';
+                        //echo '<a href="index.php?p_id='.$result_submenu['menu_id'].'" class="sidemenu">'.$result_submenu['menu_name'].'</a>';
+                        echo '<a href="javascript:void(0)">'.$result_submenu['menu_name'].'</a>';
+                        //echo "select `album_id`,`album_name` from `photo_album` where `menu_id`='".$result_submenu['menu_id']."' order by `album_id` asc;";
                         $sub_album_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$result_submenu['menu_id']."' order by `album_id` asc;");
                         while($result_album_submenu = mysql_fetch_array($sub_album_menu_query))
                         {
@@ -111,7 +112,7 @@
 							else
 							{
 								$gallery_images_query=query("select `photo_id`, `title`, `pic_dir` from `photos` where photos.album_id='".$_GET['album_id']."'");
-							$album_id=$_GET['album_id'];
+							    $album_id=$_GET['album_id'];
 							}
 							
 							$count = mysql_num_rows($gallery_images_query);

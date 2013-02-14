@@ -65,7 +65,7 @@ body {
                     <select name="parent" id="parent">
                       <option value="0">Main Page (No Parent)</option>
 					  <?php
-					  	$menu_query=query("select `menu_id`, `menu_name` from `menus` where `parent_menu_id`='0';");
+					  	$menu_query=query("select `menu_id`, `menu_name` from `menus`;");
 						while($result_menu=mysql_fetch_array($menu_query))
 						{
 							echo "<option value='".$result_menu['menu_id']."'>".$result_menu['menu_name']."</option>";

@@ -176,3 +176,9 @@ position:relative;
 .arrows:hover{
     background-color: #d1d1d1;
 }
+
+.pages-body {
+    min-height: 300px;
+    padding: 10px;
+    text-align: justify;
+}

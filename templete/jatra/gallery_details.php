@@ -5,12 +5,12 @@
 <script type="text/javascript">
     $(document).ready(function($){
         $('#accordion-6').dcAccordion({
-            eventType: 'hover',
-            autoClose: true,
+            eventType: 'click',
+            autoClose: false,
             saveState: true,
             disableLink: false,
             showCount: false,
-            menuClose: true,
+            menuClose: false,
             speed: 'slow'
         });
     });
@@ -48,13 +48,14 @@
                         $p_id = $p_id_result['parent_menu_id'];
                     }
 
-                    $sub_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='".$p_id."' and `is_active`='1' order by `order` asc;");
+                    $sub_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='".$_GET['p_id']."' and `is_active`='1' order by `order` asc;");
                     //$sub_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$_GET['p_id']."' order by `album_id` asc;");
                     while($result_submenu = mysql_fetch_array($sub_menu_query))
                     {
                         echo '<li>';
-                        //echo '<a href="index.php?p_id='.$_GET['p_id'].'&sub_id='.$result_submenu['menu_id'].'" class="sidemenu">'.$result_submenu['menu_name'].'</a>';
+                        //echo '<a href="index.php?p_id='.$result_submenu['menu_id'].'" class="sidemenu">'.$result_submenu['menu_name'].'</a>';
                         echo '<a href="javascript:void(0)">'.$result_submenu['menu_name'].'</a>';
+                        //echo "select `album_id`,`album_name` from `photo_album` where `menu_id`='".$result_submenu['menu_id']."' order by `album_id` asc;";
                         $sub_album_menu_query = query("select `album_id`,`album_name` from `photo_album` where `menu_id`='".$result_submenu['menu_id']."' order by `album_id` asc;");
                         while($result_album_submenu = mysql_fetch_array($sub_album_menu_query))
                         {
@@ -127,27 +128,11 @@
                                                 <li class="span4">
                                                     <a class="thumbnail" href="javascript:void(0)"><img src="../upload_big/<?php echo $pic_dir;?>" alt="<?php echo $title;?>" style="width: 490px; height: 270px;" /></a>
                                                 </li>
-                                                <li class="span3">
-                                                    <?php if(!empty($previous_pic_dir)) { ?>
-                                                    <?php echo '<a class="thumbnail" href="index.php?p_id='.$_GET['p_id'].'&album_id='.$_GET['album_id'].'&photo_id='.$previous_photo_id.'">';?>
-                                                        <img src="../upload_big/<?php echo $previous_pic_dir;?>" alt="<?php echo $previous_title;?>" style="width: 260px; height: 120px;" />
-                                                    <?php echo '</a>'; ?>
-                                                    <?php } else { ?>
-                                                    <?php echo '<a class="thumbnail" href="javascript:void(0)">';?>
-                                                        <img alt="No Image" style="width: 260px; height: 120px;" src="../upload_big/no_image.gif">
-                                                    <?php echo '</a>'; ?>
-                                                    <?php } ?>
-                                                </li>
-                                                <li class="span3">
-                                                    <?php if(!empty($next_pic_dir)) { ?>
-                                                    <?php echo '<a class="thumbnail" href="index.php?p_id='.$_GET['p_id'].'&album_id='.$_GET['album_id'].'&photo_id='.$next_photo_id.'">';?>
-                                                        <img src="../upload_big/<?php echo $next_pic_dir;?>" alt="<?php echo $next_title;?>" style="width: 260px; height: 120px;" />
-                                                    <?php echo '</a>'; ?>
-                                                    <?php } else { ?>
-                                                    <?php echo '<a class="thumbnail" href="javascript:void(0)">';?>
-                                                    <img alt="No Image" style="width: 260px; height: 120px;" src="../upload_big/no_image.gif">
-                                                    <?php echo '</a>'; ?>
-                                                    <?php } ?>
+                                                <li class="span3" style="text-align:left;">
+                                                    <span style="font-family:'Trebuchet MS', Verdana;font-size:18px;font-weight:bold;"><?php echo $title; ?></span>
+                                                    <?php
+                                                        echo $description;
+                                                    ?>
                                                 </li>
                                             </ul>
                                         </td>
@@ -163,24 +148,25 @@
                                     </tr>
                                     <tr>
                                         <td align="left" valign="top">
-                                            <span style="font-family:'Trebuchet MS', Verdana;font-size:18px;font-weight:bold;"><?php echo $title; ?></span>
+                                            <span style="font-weight: bold;">Related Products</span>
+                                            <marquee>
                                             <?php
-                                            echo $description;
-                                            ?>                        </td>
+                                            $gallery_images_query = query("select `photo_id`, `title`, `pic_dir` from `photos` where photos.album_id='" . $_GET['album_id'] . "'");
+                                            while ($gallery_images_result = mysql_fetch_array($gallery_images_query))
+                                            {
+                                                if (empty($_GET['album_id']))
+                                                    $album_id = $gallery_images_result['album_id'];
+                                                echo '<div class="thumbnail">
+											            <a href="index.php?p_id=' . $_GET['p_id'] . '&album_id=' . $album_id . '&photo_id=' . $gallery_images_result['photo_id'] . '"><img src="../upload_small/' . $gallery_images_result['pic_dir'] . '" style="width: 100px; height: auto;" alt="' . $gallery_images_result['title'] . '" /></a>
+											            <h5>' . $gallery_images_result['title'] . '</h5>
+											          </div>';
+                                            }
+                                            ?>
+                                            </marquee>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td align="left" valign="top">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td align="left" valign="top">
-                                            <?php
-                                            if (!empty($web_url)) {
-                                                ?>
-                                                <iframe src="<?php echo $web_url; ?>" frameborder="0" width="100%"
-                                                        height="500px"></iframe>
-                                                <?php
-                                            }
-                                            ?>                        </td>
                                     </tr>
                                 </table>
                             </td>

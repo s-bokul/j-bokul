@@ -74,45 +74,6 @@
                     }
                 }
             ?>
-        <li><a class="hide" href="../menu/index.html">DEMOS</a>
-
-            <ul>
-                <li><a href="../menu/zero_dollars.html" title="The zero dollar ads page">zero dollars</a></li>
-                <li><a href="../menu/embed.html" title="Wrapping text around images">wrapping text</a></li>
-                <li><a href="../menu/form.html" title="Styling forms">styled form</a></li>
-                <li><a href="../menu/nodots.html" title="Removing active/focus borders">active focus</a></li>
-
-            </ul>
-
-        </li>
-
-            <!--<li><a class="hide" href="index.html">MENUS</a>
-
-                <ul>
-                    <li><a href="spies.html" title="a coded list of spies">spies menu</a></li>
-                    <li><a href="vertical.html" title="a horizontal vertical menu">vertical menu</a></li>
-                    <li><a href="expand.html" title="an enlarging unordered list">enlarging list</a></li>
-                    <li><a href="enlarge.html" title="an unordered list with link images">link images</a></li>
-                    <li><a href="cross.html" title="non-rectangular links">non-rectangular</a></li>
-                    <li><a href="jigsaw.html" title="jigsaw links">jigsaw links</a></li>
-                    <li><a href="circles.html" title="circular links">circular links</a></li>
-                </ul>
-
-            </li>
-
-            <li><a class="hide" href="../boxes/index.html">BOXES</a>
-
-                <ul>
-                    <li><a href="spies.html" title="a coded list of spies">spies menu</a></li>
-                    <li><a href="vertical.html" title="a horizontal vertical menu">vertical menu</a></li>
-                    <li><a href="expand.html" title="an enlarging unordered list">enlarging list</a></li>
-                    <li><a href="enlarge.html" title="an unordered list with link images">link images</a></li>
-                    <li><a href="cross.html" title="non-rectangular links">non-rectangular</a></li>
-                    <li><a href="jigsaw.html" title="jigsaw links">jigsaw links</a></li>
-                    <li><a href="circles.html" title="circular links">circular links</a></li>
-                </ul>
-
-            </li>-->
 
         </ul>
 
@@ -159,12 +120,12 @@
                     <td>
                         <marquee behavior="scroll" direction="left" onmouseover="stop();" onmouseout="start();"
                                  scrollamount="2" id="marq">
-                            <a class="banner-tip" href="#" data-placement="top" data-toggle="tooltip" data-original-title="Tooltip on top" title="Tooltip on top" ><img src="<?php echo $path; ?>images/model/m1.png" width="356" height="500"/></a>
-                            <img src="<?php echo $path; ?>images/model/m2.png" width="361" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m3.png" width="563" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m4.png" width="340" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m5.png" width="376" height="500"/>
-                            <img src="<?php echo $path; ?>images/model/m6.png" width="373" height="500"/>
+                            <a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m1.png" width="356" height="500"/></a>
+                            <a href="index.php?p_id=PG-006"  title="Clothing & Accessories" ><img src="<?php echo $path; ?>images/model/m2.png" width="361" height="500"/></a>
+                            <a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m3.png" width="563" height="500"/></a>
+                            <a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m4.png" width="340" height="500"/></a>
+                            <a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m5.png" width="376" height="500"/></a>
+                            <a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m6.png" width="373" height="500"/></a>
                         </marquee>
                     </td>
                     <td width="20px" align="right" valign="middle"><a href="javascript:void(0)" id="right"
@@ -173,6 +134,17 @@
             </table>
             <?php
         }
+        else if($is_gallery == 0){
+        ?>
+            <table cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td valign="top" align="left" height="300" class="pages-body" style="background-color: rgba(255, 255, 255, 0.4);">
+                        sdf
+                    </td>
+                </tr>
+            </table>
+        <?php
+            }
         ?>
     </div>
     <div id="page_footer">
