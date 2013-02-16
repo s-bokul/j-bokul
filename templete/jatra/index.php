@@ -139,7 +139,76 @@
             <table cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                     <td valign="top" align="left" height="300" class="pages-body" style="background-color: rgba(255, 255, 255, 0.4);">
-                        sdf
+                        <?php echo $con; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="10" style="background-color: rgba(255, 255, 255, 0.4);"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: rgba(255, 255, 255, 0.4);" align="center">
+                        <?php
+                            if($_GET['p_id'] == 'PG-004') {
+                        ?>
+                                <a href="#myModal" role="button" class="btn btn-primary btn-large" style="margin: 20px 0;text-decoration: none;" data-toggle="modal">Mail Us</a>
+                                <!-- Modal -->
+                                <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h3 id="myModalLabel">Contact Us</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="modal-body">
+                                                <div class="control-group">
+                                                    <label for="name" class="control-label" style="float: left;padding-top: 5px;text-align: right;width: 160px;">Name : <span class="error" style="color:#FF0000;">*</span></label>
+
+                                                    <div class="controls" style="margin-left: 160px;">
+                                                        <input type="text" id="name" name="name">
+                                                    </div>
+                                                </div>
+
+                                                <div style="clear: both;"></div>
+
+                                                <div class="control-group">
+                                                    <label for="email" class="control-label" style="float: left;padding-top: 5px;text-align: right;width: 160px;">Email : <span class="error" style="color:#FF0000;">*</span></label>
+
+                                                    <div class="controls" style="margin-left: 160px;">
+                                                        <input type="text" id="email" name="email">
+                                                    </div>
+                                                </div>
+
+                                                <div style="clear: both;"></div>
+
+                                                <div class="control-group">
+                                                    <label for="subject" class="control-label" style="float: left;padding-top: 5px;text-align: right;width: 160px;">Subject : <span class="error" style="color:#FF0000;">*</span></label>
+
+                                                    <div class="controls" style="margin-left: 160px;">
+                                                        <input type="text" id="subject" name="subject">
+                                                    </div>
+                                                </div>
+
+                                                <div style="clear: both;"></div>
+
+                                                <div class="control-group">
+                                                    <label for="message" class="control-label" style="float: left;padding-top: 5px;text-align: right;width: 160px;">Message : <span class="error" style="color:#FF0000;">*</span></label>
+
+                                                    <div class="controls" style="margin-left: 160px;">
+                                                        <textarea id="message" name="message" cols="20" rows="4"></textarea>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                                        <button class="btn btn-primary">Send</button>
+                                    </div>
+                                </div>
+                        <?php
+                            }
+                        ?>
                     </td>
                 </tr>
             </table>
