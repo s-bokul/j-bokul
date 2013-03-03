@@ -5,6 +5,7 @@ background-image:url(../images/bg.jpg);
 background-size:18px 154px;
 margin:0px;
 padding:0px;
+font-family:DecoTech, "Trebuchet MS";
 }
 #container{
 width:1000px;
@@ -68,8 +69,9 @@ position:relative;
 .menu {
     width: 750px;
     position: relative;
-    font-size: 12px;
+    font-size: 16px;
     z-index: 100;
+	font-family:DecoTech, "Trebuchet MS";
 }
 
 .menu ul li a, .menu ul li a:visited {

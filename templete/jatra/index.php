@@ -115,21 +115,25 @@
             ?>
             <table cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                    <td width="20px" align="left" valign="middle"><a href="javascript:void(0)" id="left" class="arrows">
-                        < </a></td>
+                    <td width="20px" align="left" valign="middle"><a href="javascript:void(0)" id="left">
+                    	<img src="<?php echo $path; ?>images/button-left.png" />
+                        </a></td>
                     <td>
                         <marquee behavior="scroll" direction="left" onmouseover="stop();" onmouseout="start();"
                                  scrollamount="2" id="marq">
                             <a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m1.png" width="356" height="500"/></a>
                             <a href="index.php?p_id=PG-006"  title="Clothing & Accessories" ><img src="<?php echo $path; ?>images/model/m2.png" width="361" height="500"/></a>
                             <a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m3.png" width="563" height="500"/></a>
-                            <a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m4.png" width="340" height="500"/></a>
-                            <a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m5.png" width="376" height="500"/></a>
-                            <a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m6.png" width="373" height="500"/></a>
+                            <a href="index.php?p_id=PG-010" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m4.png" width="340" height="500"/></a>
+                            <a href="index.php?p_id=PG-011" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m5.png" width="376" height="500"/></a>
+                            <a href="index.php?p_id=PG-012" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m6.png" width="373" height="500"/></a>
                         </marquee>
                     </td>
-                    <td width="20px" align="right" valign="middle"><a href="javascript:void(0)" id="right"
-                                                                      class="arrows"> > </a></td>
+                    <td width="20px" align="right" valign="middle">
+                    	<a href="javascript:void(0)" id="right">
+                        	<img src="<?php echo $path; ?>images/button-right.png" />
+                        </a>
+                    </td>
                 </tr>
             </table>
             <?php
