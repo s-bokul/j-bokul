@@ -126,7 +126,7 @@
                                         <td align="center">
                                             <ul class="thumbnails">
                                                 <li class="span4">
-                                                    <a class="thumbnail" href="javascript:void(0)"><img src="../upload_big/<?php echo $pic_dir;?>" alt="<?php echo $title;?>" style="width: 490px; height: 270px;" /></a>
+                                                    <a href="../upload_big/<?php echo $pic_dir;?>" rel="example1" title="<?php echo $title;?>" class="thumbnail"><img src="../upload_big/<?php echo $pic_dir;?>" alt="<?php echo $title;?>" style="width: 490px; height: 270px;" /></a>
                                                 </li>
                                                 <li class="span3" style="text-align:left;">
                                                     <span style="font-family:'Trebuchet MS', Verdana;font-size:18px;font-weight:bold;"><?php echo $title; ?></span>

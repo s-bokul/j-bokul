@@ -130,13 +130,13 @@ position:relative;
 
 .menu ul li:hover ul li a {
     display: block;
-    background-color: rgba(13, 89, 149, 0.8);
+    background-color: rgba(191, 141, 66, 0.80);
     background-image: none;
     color: #000;
 }
 
 .menu ul li:hover ul li a:hover {
-    background-color: rgba(101, 168, 50, 0.4);
+    background-color: rgb(189, 139, 65);
     color: #000;
 }
 

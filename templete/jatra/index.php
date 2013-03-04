@@ -10,11 +10,15 @@
     <link rel="shortcut icon" href="images/jatra-icon.png"/>
     <link href="<?php echo $path; ?>css/jatra_css.css" type="text/css" rel="stylesheet"/>
     <link href="<?php echo $path; ?>css/bootstrap.css" type="text/css" rel="stylesheet"/>
+    <link href="<?php echo $path; ?>colorbox.css" type="text/css" rel="stylesheet"/>
     <!-- javasript-->
     <script type="text/javascript" src="<?php echo $path; ?>js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="<?php echo $path; ?>js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo $path; ?>js/jquery.colorbox-min.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
+            $("a[rel='example1']").colorbox();
             $("#left").click(function () {
                 //$("#marq").removeAttr("direction");
                 $("#marq").attr("direction", "left");
@@ -47,7 +51,7 @@
         <div class="clear-both"></div>
     </div>
     <div class="clear-both"></div>
-    <div id="page_body" align="center">
+    <div id="page_body" align="left">
         <div class="nav">
         <div class="menu">
 
