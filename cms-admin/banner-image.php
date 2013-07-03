@@ -77,33 +77,49 @@ a:hover
                   <td height="25">&nbsp;</td>
                 </tr>
                 <tr>
-                  <td><form action="banner-image-ins.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
-                    <table width="978" border="0" cellpadding="0" cellspacing="0">
-                      
-                      <tr>
-                        <td width="116" height="30" align="left" valign="middle">Upload Pictire : </td>
-                        <td width="862" align="left" valign="middle">
-							<input name="fileField" type="file" id="photo" />
-						</td>
-                      </tr>
-                        
-                      <tr>
-                        <td height="10" align="left" valign="middle"></td>
-                        <td align="left" valign="middle"></td>
-                      </tr>
-                      
+                    <td>
+                        <form action="banner-image-ins.php" method="post" enctype="multipart/form-data" name="form1"
+                              id="form1">
+                            <table width="978" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="116" height="30" align="left" valign="middle">Upload Picture :</td>
+                                    <td width="862" align="left" valign="middle">
+                                        <input name="fileField" type="file" id="photo"/>
+                                    </td>
+                                </tr>
 
-                      <tr>
-                        <td height="10" align="left" valign="middle" colspan="2"></td>
-                      </tr>
-                      <tr>
-                        <td height="30" align="left" valign="middle" colspan="2">
-							<input type="image" src="images/submit-btn.png" value="Submit" />
-                  			<img src="images/reset-btn.png" onclick="form1.reset()" />						
-                            </td>
-                      </tr>
-                    </table>
-                                    </form>                  </td>
+                                <tr>
+                                    <td width="116" height="30" align="left" valign="middle">Title :</td>
+                                    <td width="862" align="left" valign="middle">
+                                        <input type="text" name="title">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td width="116" height="30" align="left" valign="middle">URL :</td>
+                                    <td width="862" align="left" valign="middle">
+                                        <input type="text" name="url">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td height="10" align="left" valign="middle"></td>
+                                    <td align="left" valign="middle"></td>
+                                </tr>
+
+
+                                <tr>
+                                    <td height="10" align="left" valign="middle" colspan="2"></td>
+                                </tr>
+                                <tr>
+                                    <td height="30" align="left" valign="middle" colspan="2">
+                                        <input type="image" src="images/submit-btn.png" value="Submit"/>
+                                        <img src="images/reset-btn.png" onclick="form1.reset()"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </td>
                 </tr>
               </table></td>
             </tr>

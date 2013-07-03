@@ -56,7 +56,7 @@ body {
 			  </table>
 			</form>
 		</div>
-		<div id="foot-sec">Copyright &copy; shakil.bokul@gmail.com</div>
+		<div id="foot-sec">Copyright &copy; 2013</div>
 	</div>
 </body>
 </html>

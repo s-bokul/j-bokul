@@ -38,7 +38,8 @@ $picture="$img$extension";
 else
 $picture="";
 //////////////////////////////////////////////////
-	$insert=query("INSERT INTO `banner_image` (`id`, `image`, `create_date`) VALUES ('$RecordID', '$picture', curdate());");
+
+$insert=query("INSERT INTO `banner_image` (`id`, `image`, `title`, `url`, `create_date`) VALUES ('".$RecordID."', '".$picture."', '".$_POST['title']."', '".$_POST['url']."', curdate());");
 	if($insert)
 	{
 		$msg=base64_encode("Photo Uploaded Successfully");

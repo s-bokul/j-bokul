@@ -49,15 +49,15 @@ if (is_uploaded_file($_FILES['photo']['tmp_name'])) {
 
             $currwidth = imagesx($simg); // Current Image Width
             $currheight = imagesy($simg); // Current Image Height
-            if ($currheight > $currwidth) { // If Height Is Greater Than Width
+            /*if ($currheight > $currwidth) { // If Height Is Greater Than Width
                 $zoom = $twidth / $currheight; // Length Ratio For Width
                 $newheight = $theight; // Height Is Equal To Max Height
                 $newwidth = $currwidth * $zoom; // Creates The New Width
-            } else { // Otherwise, Assume Width Is Greater Than Height (Will Produce Same Result If Width Is Equal To Height)
+            } else {*/ // Otherwise, Assume Width Is Greater Than Height (Will Produce Same Result If Width Is Equal To Height)
                 $zoom = $twidth / $currwidth; // Length Ratio For Height
                 $newwidth = $twidth; // Width Is Equal To Max Width
                 $newheight = $currheight * $zoom; // Creates The New Height
-            }
+            //}
             $dimg = imagecreate($newwidth, $newheight); // Make New Image For Thumbnail
             imagetruecolortopalette($simg, false, 256); // Create New Color Pallete
             $palsize = ImageColorsTotal($simg);

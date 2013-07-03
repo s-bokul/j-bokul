@@ -20,7 +20,8 @@
     color: #fff;
     border-bottom: 1px solid #A27838;
     border-top: 1px solid #A27838;
-    font-family:DecoTech, "Trebuchet MS";
+    font-family:tahoma, "Trebuchet MS";
+    font-size: 13px;
 }
 
 .blue .accordion ul a {

@@ -126,7 +126,7 @@
                                         <td align="center">
                                             <ul class="thumbnails">
                                                 <li class="span4">
-                                                    <a href="../upload_big/<?php echo $pic_dir;?>" rel="example1" title="<?php echo $title;?>" class="thumbnail"><img src="../upload_big/<?php echo $pic_dir;?>" alt="<?php echo $title;?>" style="width: 490px; height: 270px;" /></a>
+                                                    <a href="../upload_big/<?php echo $pic_dir;?>" rel="example1" title="<?php echo $title;?>" class="thumbnail"><img src="../upload_big/<?php echo $pic_dir;?>" alt="<?php echo $title;?>" style="width: 490px; height: auto;" /></a>
                                                 </li>
                                                 <li class="span3" style="text-align:left;">
                                                     <span style="font-family:'Trebuchet MS', Verdana;font-size:18px;font-weight:bold;"><?php echo $title; ?></span>
@@ -151,14 +151,14 @@
                                             <span style="font-weight: bold;">Related Products</span>
                                             <marquee>
                                             <?php
-                                            $gallery_images_query = query("select `photo_id`, `title`, `pic_dir` from `photos` where photos.album_id='" . $_GET['album_id'] . "'");
+                                            $gallery_images_query = query("select `photo_id`, `title`, `pic_dir` from `photos` where photos.album_id='" . $_GET['album_id'] . "' and `photo_id` != '".$_GET['photo_id']."'");
                                             while ($gallery_images_result = mysql_fetch_array($gallery_images_query))
                                             {
                                                 if (empty($_GET['album_id']))
                                                     $album_id = $gallery_images_result['album_id'];
-                                                echo '<div class="thumbnail">
+                                                echo '<div class="thumbnail" style="float:left;margin:5px;">
 											            <a href="index.php?p_id=' . $_GET['p_id'] . '&album_id=' . $album_id . '&photo_id=' . $gallery_images_result['photo_id'] . '"><img src="../upload_small/' . $gallery_images_result['pic_dir'] . '" style="width: 100px; height: auto;" alt="' . $gallery_images_result['title'] . '" /></a>
-											            <h5>' . $gallery_images_result['title'] . '</h5>
+											            <p style="font-size:11px;">' . $gallery_images_result['title'] . '</p>
 											          </div>';
                                             }
                                             ?>

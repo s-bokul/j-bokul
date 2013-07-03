@@ -7,7 +7,8 @@
     <?php
         echo meta();
     ?>
-    <link rel="shortcut icon" href="images/jatra-icon.png"/>
+    <link rel="icon" href="<?php echo $path; ?>images/fav.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo $path; ?>images/fav.jpg" type="image/x-icon" />
     <link href="<?php echo $path; ?>css/jatra_css.css" type="text/css" rel="stylesheet"/>
     <link href="<?php echo $path; ?>css/bootstrap.css" type="text/css" rel="stylesheet"/>
     <link href="<?php echo $path; ?>colorbox.css" type="text/css" rel="stylesheet"/>
@@ -47,12 +48,12 @@
 
 <div id="container">
     <div id="page_header">
-        <div id="banner"><img src="<?php echo $path; ?>images/top.png" width="1000" height="153"/></div>
+        <div id="banner"><img src="<?php echo $path; ?>images/header-n.jpg" width="978" height="153"/></div>
         <div class="clear-both"></div>
     </div>
     <div class="clear-both"></div>
     <div id="page_body" align="left">
-        <div class="nav">
+        <div class="navs">
         <div class="menu">
 
         <ul>
@@ -63,7 +64,7 @@
                 while($main_menu_result = mysql_fetch_array($main_menu_query))
                 {
                     echo '<li>';
-                    echo '<a class="hide" href="index.php?p_id='.$main_menu_result['menu_id'].'">'.$main_menu_result['menu_name'].'</a></td>';
+                    echo '<a class="hide" href="index.php?p_id='.$main_menu_result['menu_id'].'">'.$main_menu_result['menu_name'].'</a>';
                     $sub_menu_query = query("select `menu_id`,`menu_name` from `menus` where `parent_menu_id`='".$main_menu_result['menu_id']."' and `is_active`='1' order by `order` asc;");
                     $count_result = mysql_num_rows($sub_menu_query);
                     if($count_result > 0) {
@@ -102,6 +103,7 @@
                 </tr>
             </table>-->
         </div>
+
         <div class="clear-both"></div>
         <?php
         $content = content();
@@ -117,7 +119,7 @@
         }
         if ($menu_name == "Home") {
             ?>
-            <table cellpadding="0" cellspacing="0" width="100%">
+            <table cellpadding="0" cellspacing="0" width="100%" style="margin-top: 5px;">
                 <tr>
                     <td width="20px" align="left" valign="middle"><a href="javascript:void(0)" id="left">
                     	<img src="<?php echo $path; ?>images/button-left.png" />
@@ -125,12 +127,28 @@
                     <td>
                         <marquee behavior="scroll" direction="left" onmouseover="stop();" onmouseout="start();"
                                  scrollamount="2" id="marq">
-                            <a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m1.png" width="356" height="500"/></a>
-                            <a href="index.php?p_id=PG-006"  title="Clothing & Accessories" ><img src="<?php echo $path; ?>images/model/m2.png" width="361" height="500"/></a>
-                            <a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m3.png" width="563" height="500"/></a>
-                            <a href="index.php?p_id=PG-010" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m4.png" width="340" height="500"/></a>
-                            <a href="index.php?p_id=PG-011" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m5.png" width="376" height="500"/></a>
-                            <a href="index.php?p_id=PG-012" title="Home Decor" ><img src="<?php echo $path; ?>images/model/m6.png" width="373" height="500"/></a>
+                            <?php
+                            $image_gallery_query = query("SELECT `image`, `title`, `url` FROM `banner_image` order by id desc limit 5;");
+                            $images_data = array();
+                            $i = 0;
+                            while($image_gallery_result = mysql_fetch_array($image_gallery_query)) {
+                                $images_data[$i]['url'] = $image_gallery_result['url'];
+                                $images_data[$i]['title'] = $image_gallery_result['title'];
+                                $images_data[$i]['image'] = $image_gallery_result['image'];
+                                ++$i;
+                            }
+                            $images_data = array_reverse($images_data);
+
+                            foreach($images_data as $image_gallery_result) {
+                                echo '<a href="'.$image_gallery_result['url'].'" title="'.$image_gallery_result['title'].'" ><img src="../bimages/'.$image_gallery_result['image'].'" /></a>';
+                            }
+                            ?>
+                            <!--<a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php /*echo $path; */?>images/model/m1.png" width="356" height="500"/></a>
+                            <a href="index.php?p_id=PG-006"  title="Clothing & Accessories" ><img src="<?php /*echo $path; */?>images/model/m2.png" width="361" height="500"/></a>
+                            <a href="index.php?p_id=PG-005" title="Home Decor" ><img src="<?php /*echo $path; */?>images/model/m3.png" width="563" height="500"/></a>
+                            <a href="index.php?p_id=PG-010" title="Home Decor" ><img src="<?php /*echo $path; */?>images/model/m4.png" width="340" height="500"/></a>
+                            <a href="index.php?p_id=PG-011" title="Home Decor" ><img src="<?php /*echo $path; */?>images/model/m5.png" width="376" height="500"/></a>
+                            <a href="index.php?p_id=PG-012" title="Home Decor" ><img src="<?php /*echo $path; */?>images/model/m6.png" width="373" height="500"/></a>-->
                         </marquee>
                     </td>
                     <td width="20px" align="right" valign="middle">
@@ -144,7 +162,7 @@
         }
         else if($is_gallery == 0){
         ?>
-            <table cellpadding="0" cellspacing="0" width="100%">
+            <table cellpadding="0" cellspacing="0" width="100%" style="margin-top: 5px;">
                 <tr>
                     <td valign="top" align="left" height="300" class="pages-body" style="background-color: rgba(255, 255, 255, 0.4);">
                         <?php echo $con; ?>
@@ -225,7 +243,12 @@
         ?>
     </div>
     <div id="page_footer">
-        <div id="footer"><img src="<?php echo $path; ?>images/down.png" width="1000" height="140"/></div>
+        <div id="footer"><img src="<?php echo $path; ?>images/footer.png" width="978" height="123"/></div>
+    </div>
+    <div id="add_page_footer">
+        <div class="address">
+            Address :
+        </div>
     </div>
 </div>
 </body>

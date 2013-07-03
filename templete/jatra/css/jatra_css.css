@@ -1,26 +1,24 @@
 @charset "utf-8";
 /* CSS Document */
 body{
-background-image:url(../images/bg.jpg);
+background-image:url(../images/web-bg.jpg);
 background-size:18px 154px;
 margin:0px;
 padding:0px;
-font-family:DecoTech, "Trebuchet MS";
+font-family:tahoma, "Trebuchet MS";
 }
 #container{
-width:1000px;
+width:978px;
 margin:0px auto;
 
 }
 #page_header{
 width:100%;
-height:153px;
 
 }
 
 #banner{
 width:100%;
-height:160px;
 }
 
 #page_body{
@@ -42,6 +40,18 @@ width: 100%;
 height:140px;
 }
 
+#add_page_footer{
+    width: 100%;
+    height:150px;
+    background-image: url("../images/add-footer.png");
+}
+
+.address {
+    color: #fff;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
 #footer{
 width: 100%;
 heigh:140px;
@@ -51,9 +61,9 @@ position:relative;
 .clear-both{
     clear: both;
 }
-.nav{
+.navs{
     width: 100%;
-    margin: 5px auto;
+    margin: 5px auto 10px;
 }
 
 /* ================================================================
@@ -69,20 +79,28 @@ position:relative;
 .menu {
     width: 750px;
     position: relative;
-    font-size: 16px;
+    font-size: 12px;
     z-index: 100;
-	font-family:DecoTech, "Trebuchet MS";
+	font-family:tahoma, "Trebuchet MS";
 }
 
 .menu ul li a, .menu ul li a:visited {
     background-image: url(../images/menu-bg.png);
+    /*-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;*/
+    /*border-style: dashed;
+    border-width: 1px;
+    border-color: #000;*/
     text-align: center;
     text-decoration: none;
-    width: 130px;
+    min-width: 130px;
     height: 30px;
     display: block;
     padding-top: 8px;
+    margin-right: 5px;
     color: #000000;
+    font-weight: bold;
 }
 
 .menu ul {
@@ -102,13 +120,14 @@ position:relative;
 
 /* specific to non IE browsers */
 .menu ul li:hover a {
-    color: #fff;
+    color: #bd3636;
+    border-color: #bd3636;
 }
 
 .menu ul li:hover ul {
     display: block;
     position: absolute;
-    top: 30px;
+    top: 35px;
     left: 0;
     width: 105px;
 }
@@ -130,14 +149,19 @@ position:relative;
 
 .menu ul li:hover ul li a {
     display: block;
-    background-color: rgba(191, 141, 66, 0.80);
+    background-color: rgba(0, 0, 0, 0.65);
     background-image: none;
-    color: #000;
+    color: #fff;
+    font-weight: normal;
+    border-color: #000;
+    border-style: dashed;
+    border-width: 1px;
+    border-color: #000;
 }
 
 .menu ul li:hover ul li a:hover {
-    background-color: rgb(189, 139, 65);
     color: #000;
+    border-color: #000;
 }
 
 .menu ul li:hover ul li:hover ul {
